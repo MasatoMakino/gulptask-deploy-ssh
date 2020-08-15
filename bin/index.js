@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.get = void 0;
 var src = require("gulp").src;
 var rsync = require("gulp-rsync");
-var plumber = require("gulp-plumber");
 var path = require("path");
 var Option_1 = require("./Option");
 function get(option) {
@@ -34,15 +33,8 @@ function get(option) {
     };
 }
 exports.get = get;
-function onErrorHandler(err) {
-    console.log(err);
-    this.emit("end");
-}
 var runRsync = function (option) {
     return src(path.resolve(option.root, "**"))
-        .pipe(plumber({
-        errorHandler: onErrorHandler,
-    }))
         .pipe(rsync(option))
         .on("error", function (msg) {
         console.log(msg);

@@ -7,6 +7,10 @@ interface CommonOption {
 export interface Option extends CommonOption {
     stagingDir?: string;
 }
+export declare class OptionDefault {
+    static readonly stagingDir = "staging";
+    static readonly exclude: string[];
+}
 export interface GulpRsyncOption extends CommonOption {
     progress?: boolean;
     recursive?: boolean;

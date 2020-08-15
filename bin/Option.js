@@ -18,16 +18,30 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
     return r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptionInitializer = void 0;
+exports.OptionInitializer = exports.OptionDefault = void 0;
 var path = require("path");
+var OptionDefault = /** @class */ (function () {
+    function OptionDefault() {
+    }
+    OptionDefault.stagingDir = "staging";
+    OptionDefault.exclude = [
+        ".git",
+        ".gitignore",
+        "node_modules",
+        ".DS_Store",
+        "rev-manifest.json",
+    ];
+    return OptionDefault;
+}());
+exports.OptionDefault = OptionDefault;
 var OptionInitializer = /** @class */ (function () {
     function OptionInitializer() {
     }
     OptionInitializer.init = function (option) {
         var _a, _b, _c;
         option.root = (_a = option.root) !== null && _a !== void 0 ? _a : path.resolve(process.cwd(), "dist");
-        option.stagingDir = (_b = option.stagingDir) !== null && _b !== void 0 ? _b : "staging";
-        option.exclude = (_c = option.exclude) !== null && _c !== void 0 ? _c : [".git", ".gitignore", "node_modules", ".DS_Store"];
+        option.stagingDir = (_b = option.stagingDir) !== null && _b !== void 0 ? _b : OptionDefault.stagingDir;
+        option.exclude = (_c = option.exclude) !== null && _c !== void 0 ? _c : OptionDefault.exclude;
         return option;
     };
     OptionInitializer.getStagingOption = function (option) {

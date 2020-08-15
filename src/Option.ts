@@ -11,19 +11,30 @@ export interface Option extends CommonOption {
   stagingDir?: string;
 }
 
+export class OptionDefault {
+  static readonly stagingDir = "staging";
+  static readonly exclude = [
+    ".git",
+    ".gitignore",
+    "node_modules",
+    ".DS_Store",
+    "rev-manifest.json",
+  ];
+}
+
 export interface GulpRsyncOption extends CommonOption {
   progress?: boolean; // 転送情報を表示
   recursive?: boolean; // 再帰的にディレクトリを走査
   compress?: boolean; // 圧縮する
   clean?: boolean;
-  dryrun?:boolean;
+  dryrun?: boolean;
 }
 
 export class OptionInitializer {
   public static init(option: Option): Option {
     option.root = option.root ?? path.resolve(process.cwd(), "dist");
-    option.stagingDir = option.stagingDir ?? "staging";
-    option.exclude = option.exclude ?? [".git", ".gitignore", "node_modules", ".DS_Store" ];
+    option.stagingDir = option.stagingDir ?? OptionDefault.stagingDir;
+    option.exclude = option.exclude ?? OptionDefault.exclude;
     return option;
   }
 
