@@ -1,6 +1,6 @@
 {
   "name": "gulptask-deploy-ssh",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Web page deployment tasks for SSH and rsync.",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
