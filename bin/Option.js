@@ -27,7 +27,7 @@ var OptionInitializer = /** @class */ (function () {
         var _a, _b, _c;
         option.root = (_a = option.root) !== null && _a !== void 0 ? _a : path.resolve(process.cwd(), "dist");
         option.stagingDir = (_b = option.stagingDir) !== null && _b !== void 0 ? _b : "staging";
-        option.exclude = (_c = option.exclude) !== null && _c !== void 0 ? _c : [".git", ".gitignore", "node_modules"];
+        option.exclude = (_c = option.exclude) !== null && _c !== void 0 ? _c : [".git", ".gitignore", "node_modules", ".DS_Store"];
         return option;
     };
     OptionInitializer.getStagingOption = function (option) {
