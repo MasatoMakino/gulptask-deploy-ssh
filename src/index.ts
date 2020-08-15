@@ -3,7 +3,7 @@ const rsync = require("gulp-rsync");
 const plumber = require("gulp-plumber");
 import * as path from "path";
 
-import {GulpRsyncOption, Option, OptionInitializer} from "./Option";
+import { GulpRsyncOption, Option, OptionInitializer } from "./Option";
 
 export function get(option: Option) {
   option = OptionInitializer.init(option);
@@ -37,10 +37,12 @@ export function get(option: Option) {
     deployDry,
   };
 }
-const onErrorHandler = (err) => {
+
+function onErrorHandler(err) {
   console.log(err);
   this.emit("end");
-};
+}
+
 const runRsync = (option: GulpRsyncOption) => {
   return src(path.resolve(option.root, "**"))
     .pipe(

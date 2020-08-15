@@ -1,5 +1,4 @@
 "use strict";
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.get = void 0;
 var src = require("gulp").src;
@@ -35,10 +34,10 @@ function get(option) {
     };
 }
 exports.get = get;
-var onErrorHandler = function (err) {
+function onErrorHandler(err) {
     console.log(err);
-    _this.emit("end");
-};
+    this.emit("end");
+}
 var runRsync = function (option) {
     return src(path.resolve(option.root, "**"))
         .pipe(plumber({

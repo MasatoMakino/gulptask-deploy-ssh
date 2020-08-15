@@ -1,7 +1,6 @@
 import * as path from "path";
 
 interface CommonOption {
-  username: string;
   hostname: string;
   destination: string;
   root?: string;
