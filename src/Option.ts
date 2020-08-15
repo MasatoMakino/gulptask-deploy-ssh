@@ -23,7 +23,7 @@ export class OptionInitializer {
   public static init(option: Option): Option {
     option.root = option.root ?? path.resolve(process.cwd(), "dist");
     option.stagingDir = option.stagingDir ?? "staging";
-    option.exclude = option.exclude ?? [".git", ".gitignore", "node_modules"];
+    option.exclude = option.exclude ?? [".git", ".gitignore", "node_modules", ".DS_Store" ];
     return option;
   }
 
