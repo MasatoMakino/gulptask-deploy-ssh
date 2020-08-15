@@ -1,2 +1,3 @@
 # gulptask-deploy-ssh
-Web page deployment tools for SSH and rsync
+
+> Web page deployment tasks for SSH and rsync.
