@@ -1,0 +1,27 @@
+{
+  "name": "gulptask-deploy-ssh",
+  "version": "0.0.1",
+  "description": "Web page deployment tasks for SSH and rsync.",
+  "main": "./bin/index.js",
+  "types": "./bin/index.d.ts",
+  "repository": "https://MasatoMakino@github.com/MasatoMakino/gulptask-deploy-ssh.git",
+  "author": "MasatoMakino <unagiinu.g@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rsync": "^0.0.9"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start:dev": "tsc --watch",
+    "run": "gulp stagingDry"
+  }
+}
