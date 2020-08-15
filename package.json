@@ -9,7 +9,6 @@
   "license": "MIT",
   "dependencies": {
     "gulp": "^4.0.2",
-    "gulp-plumber": "^1.2.1",
     "gulp-rsync": "^0.0.9"
   },
   "devDependencies": {
@@ -23,5 +22,10 @@
     "build": "tsc",
     "start:dev": "tsc --watch",
     "run": "gulp stagingDry"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
