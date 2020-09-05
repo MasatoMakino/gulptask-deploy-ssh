@@ -23,6 +23,7 @@ export class OptionDefault {
 }
 
 export interface GulpRsyncOption extends CommonOption {
+  hostname: string;
   progress?: boolean; // 転送情報を表示
   recursive?: boolean; // 再帰的にディレクトリを走査
   compress?: boolean; // 圧縮する
@@ -41,6 +42,7 @@ export class OptionInitializer {
   public static getStagingOption(option: Option): GulpRsyncOption {
     return {
       ...option,
+      hostname: option.host,
       destination: path.posix.join(option.destination, option.stagingDir),
       exclude: [...option.exclude, ".htaccess"],
       progress: true,
@@ -53,6 +55,7 @@ export class OptionInitializer {
   public static getDeployOption(option: Option): GulpRsyncOption {
     return {
       ...option,
+      hostname: option.host,
       progress: true,
       recursive: true,
       compress: true,

@@ -12,6 +12,7 @@ export declare class OptionDefault {
     static readonly exclude: string[];
 }
 export interface GulpRsyncOption extends CommonOption {
+    hostname: string;
     progress?: boolean;
     recursive?: boolean;
     compress?: boolean;

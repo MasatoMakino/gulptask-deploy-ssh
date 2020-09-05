@@ -45,10 +45,10 @@ var OptionInitializer = /** @class */ (function () {
         return option;
     };
     OptionInitializer.getStagingOption = function (option) {
-        return __assign(__assign({}, option), { destination: path.posix.join(option.destination, option.stagingDir), exclude: __spreadArrays(option.exclude, [".htaccess"]), progress: true, recursive: true, compress: true, clean: true });
+        return __assign(__assign({}, option), { hostname: option.host, destination: path.posix.join(option.destination, option.stagingDir), exclude: __spreadArrays(option.exclude, [".htaccess"]), progress: true, recursive: true, compress: true, clean: true });
     };
     OptionInitializer.getDeployOption = function (option) {
-        return __assign(__assign({}, option), { progress: true, recursive: true, compress: true });
+        return __assign(__assign({}, option), { hostname: option.host, progress: true, recursive: true, compress: true });
     };
     return OptionInitializer;
 }());
