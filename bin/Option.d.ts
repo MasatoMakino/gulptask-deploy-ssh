@@ -1,5 +1,5 @@
 interface CommonOption {
-    hostname: string;
+    host: string;
     destination: string;
     root?: string;
     exclude?: string[];
