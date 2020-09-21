@@ -4,7 +4,19 @@ import * as path from "path";
 
 import { GulpRsyncOption, Option, OptionInitializer } from "./Option";
 
+/**
+ * @deprecated Use generateTasks
+ * @param option
+ */
 export function get(option: Option) {
+  return generateTasks(option);
+}
+
+/**
+ *
+ * @param option
+ */
+export function generateTasks(option: Option) {
   option = OptionInitializer.init(option);
 
   const staging = () => {
