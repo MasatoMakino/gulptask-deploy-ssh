@@ -1,10 +1,13 @@
 {
-  "name": "gulptask-deploy-ssh",
+  "name": "@masatomakino/gulptask-deploy-ssh",
   "version": "0.0.5",
   "description": "Web page deployment tasks for SSH and rsync.",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
-  "repository": "https://MasatoMakino@github.com/MasatoMakino/gulptask-deploy-ssh.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://MasatoMakino@github.com/MasatoMakino/gulptask-deploy-ssh.git"
+  },
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -27,5 +30,12 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/MasatoMakino/gulptask-deploy-ssh/issues"
+  },
+  "homepage": "https://github.com/MasatoMakino/gulptask-deploy-ssh#readme",
+  "bin": {
+    "gulptask-deploy-ssh": "bin/Option.js"
   }
 }
