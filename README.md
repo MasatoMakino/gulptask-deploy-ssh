@@ -2,6 +2,8 @@
 
 > Web page deployment tasks for SSH and rsync.
 
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 ## Getting Started
 
 ### Install
@@ -13,7 +15,7 @@ npm install --save-dev gulp
 and
 
 ```bash
-npm install --save-dev https://github.com/MasatoMakino/gulptask-deploy-ssh.git
+npm install --save-dev @masatomakino/gulptask-deploy-ssh
 ```
 
 ### Run in gulpfile.js
@@ -33,7 +35,7 @@ Host <Host section name>
 #### gulpfile.js
 
 ```js
-const { deploy } = require("gulptask-deploy-ssh").get({
+const { deploy } = require("@masatomakino/gulptask-deploy-ssh").get({
   host: "Host section name", //<Host section name> in `~/.ssh/config`
   destination: "path/to/public_html",
 });
