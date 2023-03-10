@@ -1,5 +1,9 @@
 # gulptask-deploy-ssh
 
+> **Warning**
+>
+> This project has been archived. As an alternative, please use the `rsync` command on npm-script.
+
 > Web page deployment tasks for SSH and rsync.
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
